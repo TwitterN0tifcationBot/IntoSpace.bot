@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IntoSpace - Create Your Discord Bot</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Home Page -->
+    <div id="home-page">
+      <h1>IntoSpace</h1>
+      <p>Create Discord Bots Without Coding – Explore the Future of Automation!</p>
+      <button id="get-started">GET STARTED</button>
+    </div>
+
+    <!-- Email Verification Modal -->
+    <div id="email-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Verify Your Email</h2>
+        <input type="email" id="email-input" placeholder="Enter your email">
+        <button id="verify-email">Verify</button>
+      </div>
+    </div>
+
+    <!-- Bot Creation Modal -->
+    <div id="bot-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Create Your Bot</h2>
+        <input type="text" id="bot-name" placeholder="Bot Name">
+        <input type="text" id="bot-token" placeholder="Bot Token">
+        <button id="create-bot">Create Bot</button>
+      </div>
+    </div>
+
+    <!-- Bot Dashboard -->
+    <div id="dashboard" style="display: none;">
+      <h2>Bot Dashboard</h2>
+      <p><strong>Bot ID:</strong> <span id="bot-id"></span></p>
+      <p><strong>Bot Name:</strong> <span id="dashboard-bot-name"></span></p>
+      <p><strong>Status:</strong> <span id="bot-status">Offline</span></p>
