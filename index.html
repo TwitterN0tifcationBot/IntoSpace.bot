@@ -42,3 +42,24 @@
       <p><strong>Bot ID:</strong> <span id="bot-id"></span></p>
       <p><strong>Bot Name:</strong> <span id="dashboard-bot-name"></span></p>
       <p><strong>Status:</strong> <span id="bot-status">Offline</span></p>
+
+      <!-- Bot Settings Page -->
+<div id="settings-page" style="display: none;">
+  <h2>Bot Settings</h2>
+  <form id="bot-settings-form">
+    <label for="bot-name-settings">Bot Name:</label>
+    <input type="text" id="bot-name-settings" placeholder="Enter new bot name" required>
+
+    <label for="bot-token-settings">Bot Token:</label>
+    <input type="text" id="bot-token-settings" placeholder="Enter new bot token" required>
+
+    <label for="bot-activity-settings">Bot Activity:</label>
+    <input type="text" id="bot-activity-settings" placeholder="Enter new bot activity" required>
+
+    <label for="bot-collaborations">Collaborations:</label>
+    <textarea id="bot-collaborations" placeholder="Enter collaborators (comma-separated)"></textarea>
+
+    <button type="submit">Save Changes</button>
+  </form>
+  <button id="back-to-dashboard">Back to Dashboard</button>
+</div>
