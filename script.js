@@ -60,3 +60,46 @@ function simulateErrors() {
     errorList.appendChild(error);
   }, 5000);
 }
+
+// Access Settings Page from Dashboard
+document.getElementById("dashboard").innerHTML += `
+  <button id="open-settings">Bot Settings</button>
+`;
+
+document.getElementById("open-settings").addEventListener("click", () => {
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("settings-page").style.display = "block";
+
+  // Populate current settings
+  const botName = document.getElementById("dashboard-bot-name").textContent;
+  const botToken = document.getElementById("bot-token").value || ""; // Replace with actual token retrieval logic
+  const botActivity = "🚀 Coded with IntoSpace!"; // Replace with actual activity retrieval logic
+
+  document.getElementById("bot-name-settings").value = botName;
+  document.getElementById("bot-token-settings").value = botToken;
+  document.getElementById("bot-activity-settings").value = botActivity;
+});
+
+// Save Changes
+document.getElementById("bot-settings-form").addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const newBotName = document.getElementById("bot-name-settings").value;
+  const newBotToken = document.getElementById("bot-token-settings").value;
+  const newBotActivity = document.getElementById("bot-activity-settings").value;
+  const newCollaborations = document.getElementById("bot-collaborations").value.split(",").map(c => c.trim());
+
+  // Update Dashboard
+  document.getElementById("dashboard-bot-name").textContent = newBotName;
+  document.getElementById("bot-status").textContent = newBotActivity;
+
+  alert("Settings saved successfully!");
+  document.getElementById("settings-page").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+});
+
+// Back to Dashboard
+document.getElementById("back-to-dashboard").addEventListener("click", () => {
+  document.getElementById("settings-page").style.display = "none";
+  document.getElementById("dashboard").style.display = "block";
+});
